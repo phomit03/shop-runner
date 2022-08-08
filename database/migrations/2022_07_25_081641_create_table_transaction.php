@@ -16,12 +16,11 @@ class CreateTableTransaction extends Migration
         Schema::create('transaction', function (Blueprint $table) {
             $table->increments("idTransaction");
             $table->integer("idCustomer")->unsigned();
-            $table->unsignedTinyInteger("statusTransaction")->default(0);
-            $table->decimal("totalAmount",15,4)->default(0.0000);
+            $table->decimal("totalAmount",15,3)->default(0.000);
             $table->string("payment",150);
-            $table->text("paymentInfo");
             $table->text("note")->nullable();
-            $table->unsignedTinyInteger("invoice")->default(0);
+            $table->boolean("invoice")->default(0);
+            $table->boolean("statusTransaction")->default(1);
 
             $table->timestamps();
             //Tao khoa ngoai

@@ -97,7 +97,7 @@ var Popover = /** @class */ (function () {
         var _this = this;
         this.isHidden = true;
         this.margin = 10; // the space required between the popover and the edges of the scroll container
-        // Triggered when the user clicks *anywhere* in the document, for the autoHide feature
+        // Triggered when the users clicks *anywhere* in the document, for the autoHide feature
         this.documentMousedown = function (ev) {
             // only hide the popover if the click happened outside the popover
             if (_this.el && !_this.el.contains(ev.target)) {
@@ -561,14 +561,14 @@ var DayGridFillRenderer = /** @class */ (function (_super) {
             '</div>');
         trEl = skeletonEl.getElementsByTagName('tr')[0];
         if (startCol > 0) {
-            appendToElement(trEl, 
+            appendToElement(trEl,
             // will create (startCol + 1) td's
             new Array(startCol + 1).join(EMPTY_CELL_HTML));
         }
         seg.el.colSpan = endCol - startCol;
         trEl.appendChild(seg.el);
         if (endCol < colCnt) {
-            appendToElement(trEl, 
+            appendToElement(trEl,
             // will create (colCnt - endCol) td's
             new Array(colCnt - endCol + 1).join(EMPTY_CELL_HTML));
         }

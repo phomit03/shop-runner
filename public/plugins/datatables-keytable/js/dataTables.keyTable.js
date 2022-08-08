@@ -464,7 +464,7 @@ $.extend( KeyTable.prototype, {
 
 	/**
 	 * Get an array of the column indexes that KeyTable can operate on. This
-	 * is a merge of the user supplied columns and the visible columns.
+	 * is a merge of the users supplied columns and the visible columns.
 	 *
 	 * @private
 	 */
@@ -649,7 +649,7 @@ $.extend( KeyTable.prototype, {
 				.rows( { filter: 'applied', order: 'applied' } )
 				.indexes()
 				.indexOf( index.row );
-			
+
 			// Don't focus rows that were filtered out.
 			if ( row < 0 ) {
 				return;

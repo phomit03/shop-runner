@@ -17,9 +17,9 @@ class CreateTableOrder extends Migration
             $table->increments("idOrder");
             $table->integer("idProduct")->unsigned();
             $table->unsignedInteger("quantity")->default(0);
-            $table->decimal("amount",15,4)->default(0.0000);
+            $table->decimal("amount",15,3)->default(0.000);
             $table->integer("idTransaction")->unsigned();
-            $table->unsignedTinyInteger("statusOrder")->default(0);
+            $table->boolean("statusOrder")->default(1);
             $table->timestamps();
             //Tao khoa ngoai
             $table->foreign('idProduct')->references('idProduct')->on('product');

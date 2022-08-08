@@ -2288,7 +2288,7 @@ Docs & License: https://fullcalendar.io/
             configurable: true
         });
         Object.defineProperty(EventApi.prototype, "classNames", {
-            // NOTE: user can't modify these because Object.freeze was called in event-def parsing
+            // NOTE: users can't modify these because Object.freeze was called in event-def parsing
             get: function () { return this._def.ui.classNames; },
             enumerable: true,
             configurable: true
@@ -3089,7 +3089,7 @@ Docs & License: https://fullcalendar.io/
             leftovers = newLeftovers;
         }
         def.extendedProps = __assign(leftovers, def.extendedProps || {});
-        // help out EventApi from having user modify props
+        // help out EventApi from having users modify props
         Object.freeze(def.ui.classNames);
         Object.freeze(def.extendedProps);
         return def;
@@ -4398,7 +4398,7 @@ Docs & License: https://fullcalendar.io/
         var endMarker = framingRange.end;
         var instanceStarts = [];
         while (dayMarker < endMarker) {
-            var instanceStart 
+            var instanceStart
             // if everyday, or this particular day-of-week
             = void 0;
             // if everyday, or this particular day-of-week
@@ -6443,7 +6443,7 @@ Docs & License: https://fullcalendar.io/
     var interactionSettingsStore = {};
 
     /*
-    Detects when the user clicks on an event within a DateComponent
+    Detects when the users clicks on an event within a DateComponent
     */
     var EventClicking = /** @class */ (function (_super) {
         __extends(EventClicking, _super);
@@ -6480,7 +6480,7 @@ Docs & License: https://fullcalendar.io/
     }(Interaction));
 
     /*
-    Triggers events and adds/removes core classNames when the user's pointer
+    Triggers events and adds/removes core classNames when the users's pointer
     enters/leaves event-elements of a component.
     */
     var EventHovering = /** @class */ (function (_super) {

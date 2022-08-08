@@ -5,10 +5,22 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="index3.html" class="nav-link">Home</a>
+            <a href="/" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Contact</a>
+            <a href="admin/catalogs/create" class="nav-link">Catalogs</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="admin/customer/create" class="nav-link">Customer</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="admin/order/create" class="nav-link">Order</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="admin/products/create" class="nav-link">Products</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="admin/transactions/create" class="nav-link">Transactions</a>
         </li>
     </ul>
 
@@ -116,8 +128,43 @@
                 <i class="fas fa-th-large"></i>
             </a>
         </li>
-        <li>
-            
-        </li>
     </ul>
+    <!--users name-->
+    <div style="margin: 0 10px">
+        @if (Route::has('login'))
+            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                @auth   {{--da login (co nguoi dung roi)--}}
+                    <div>
+                        <i style="color: darkgrey; font-size: 14px; margin-right: 3px">Hello, </i>
+                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">
+                            <b style="font-size: 17px;"> {{Auth::user()->name}}</b>
+                        </a>
+
+                        <!-- logout -->
+                        <button onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                type="submit" class="btn btn-default btn-sm" style="margin-left: 10px;">
+                            Logout
+                        </button>
+                        <form id="logout-form" action="{{ route('logout') }}" method="post" class="d-none">
+                            @csrf
+                            @method("post")
+                        </form>
+                    </div>
+
+                @else   {{--chua dang nhap (khach)--}}
+                    <a href="{{ route('login') }}" class="ml-3 text-sm text-gray-700 underline">
+                        <button type="button" class="btn btn-info">Login</button>
+                    </a>
+
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}" class="ml-3 text-sm text-gray-700 underline">
+                            <button type="button" class="btn btn-info">Register</button>
+                        </a>
+                    @endif
+                @endif
+            </div>
+        @endif
+    </div>
+
+
 </nav>

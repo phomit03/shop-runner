@@ -17,11 +17,12 @@ class CreateTableProduct extends Migration
         Schema::create('product', function (Blueprint $table) {
             $table->increments("idProduct");
             $table->string("nameProduct",255);
-            $table->decimal("priceProduct", 15,4)->default(0.0000);
-            $table->longText("contentProduct");
-            $table->unsignedInteger("discountProduct")->default(0);
+            $table->decimal("priceProduct", 15,3)->default(0.000);
+            $table->longText("contentProduct")->nullable();
+            $table->unsignedInteger("discountProduct")->nullable();
+            $table->decimal("price_total",15,3)->default(0.000);
             $table->string("imageProduct",150);
-            $table->string("imageList",150);
+            $table->string("imageList",150)->nullable();
             $table->integer("idCatalog")->unsigned();
             $table->timestamps();
 
